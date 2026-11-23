@@ -13,7 +13,7 @@
 - TripSchedule
 - User
 
-# Contribution of Every Member
+# Contribution
 - [Ahmed Tamer](#ahmed-tamer)
   - [Ticket class](#ticket-class)
   - [README file](#readme-file)
@@ -37,4 +37,4 @@ Drew the simple diagrams:
 - Class diagram
 - Use case diagram
 
-[Back to contents](#contents)
+[Back to contribution](#contribution)
