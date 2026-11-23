@@ -13,16 +13,28 @@
 - TripSchedule
 - User
 
-# contribution of every member
-## Ahmed Tamer
-### Did the "Ticket" class and used OOP concepts like
-- private & protect (for the isolation of variables)
-- static (to keep the nessary variables "id" updated)
-- Abstraction (to keep information safe)
-- polymorphism to override methods
+# Contribution of Every Member
+- [Ahmed Tamer](#ahmed-tamer)
+  - [Ticket class](#ticket-class)
+  - [README file](#readme-file)
+  - [Diagrams](#diagrams)
 
-### Did the readme file
-- this readme.md file
-### Drew the simple diagrams
-- class diagram
-- usecase diagram
+## Discribtion
+## Ahmed Tamer
+
+### Ticket class
+Wrote the `Ticket` class and used these OOP concepts:
+- **Private & protected** members, to isolate the variables
+- **Static** variables, to keep the necessary values (like `id`) updated
+- **Abstraction**, to keep information safe
+- **Polymorphism**, to override methods
+
+### README file
+- Wrote this `README.md` file
+
+### Diagrams
+Drew the simple diagrams:
+- Class diagram
+- Use case diagram
+
+[Back to contents](#contents)
