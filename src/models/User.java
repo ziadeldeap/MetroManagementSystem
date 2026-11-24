@@ -21,4 +21,11 @@ public class User {
     public String getUsername() {
         return username;
     }
+
+    @Override
+    public String toFileString() {
+        return "User{" + "username=" + username + ", password=" + password + '}';
+    }
+    
+    
 }
