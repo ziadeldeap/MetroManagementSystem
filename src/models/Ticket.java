@@ -1,3 +1,5 @@
+
+package models;
 import java.time.LocalDate;
 public abstract class Ticket {
     public enum TicketStatus { ACTIVE, USED, EXPIRED, REFUNDED }
