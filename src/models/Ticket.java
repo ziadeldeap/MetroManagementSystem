@@ -1,3 +1,5 @@
+
+package models;
 import java.time.LocalDate;
 enum TicketStatus { ACTIVE, USED, EXPIRED, REFUNDED }
 /** Abstraction: defines what every ticket has and does. Subclasses decide the price. */
