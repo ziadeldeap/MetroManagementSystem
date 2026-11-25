@@ -11,18 +11,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import models.Admin;
-import models.MetroLine;
-import models.Staff;
-import models.Station;
-import models.Ticket;
-import models.Train;
-import models.TripSchedule;
-import models.User;
+import models.*;
 
 public class FileManager {
-
+    /*
     private static final String USERS_FILE = "users.txt";
+    private static final String STATIONS_FILE = "stations.txt";
+    private static final String LINES_FILE = "lines.txt";
+    private static final String TRAINS_FILE = "trains.txt";
 
     public static ArrayList<User> users = new ArrayList<>();
     public static ArrayList<Station> stations = new ArrayList<>();
@@ -103,4 +99,149 @@ public class FileManager {
         }
         return null;
     }
+    
+    //---------------Station
+    public static void loadAllStations() {
+        loadStations();
+    }
+
+    public static void saveAllStations() {
+        saveStations();
+    }
+
+    public static void saveStations() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(STATIONS_FILE))) {
+            for (Station u : stations) {
+                writer.write(u.toFileString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving stations: " + e.getMessage());
+        }
+    }
+
+    public static void loadStations() {
+        stations.clear();
+        File file = new File(STATIONS_FILE);
+
+        if (!file.exists()) {
+            createDefaultstation();
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stations.add(Station.fromFileString(line));
+            }
+        } catch (IOException e) {
+            System.out.println("Error loading stations: " + e.getMessage());
+        }
+
+        if (stations.isEmpty()) {
+            createDefaultstation();
+        }
+    }
+
+    private static void createDefaultstation() {
+        stations.add(new Station("000", "default", "yesItsInMars"));
+        saveStations();
+    }
+ 
+    //---------------MetroLine
+    public static void loadAllLines() {
+        loadLines();
+    }
+
+    public static void saveAllLines() {
+        saveLines();
+    }
+
+    public static void saveLines() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(LINES_FILE))) {
+            for (MetroLine u : lines) {
+                writer.write(u.toFileString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving metrolines: " + e.getMessage());
+        }
+    }
+
+    public static void loadLines() {
+        lines.clear();
+        File file = new File(LINES_FILE);
+
+        if (!file.exists()) {
+            createDefaultline();
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(MetroLine.fromFileString(line));
+            }
+        } catch (IOException e) {
+            System.out.println("Error loading metrolines: " + e.getMessage());
+        }
+
+        if (lines.isEmpty()) {
+            createDefaultline();
+        }
+    }
+
+    private static void createDefaultline() {
+        lines.add(new MetroLine("000", "default"));
+        saveLines();
+    }
+    
+    //---------------train
+    public static void loadAllTrains() {
+        loadTrain();
+    }
+
+    public static void saveAllTrains() {
+        saveTrain();
+    }
+
+    public static void saveTrain() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(TRAINS_FILE))) {
+            for (Train u : trains) {
+                writer.write(u.toFileString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving trains: " + e.getMessage());
+        }
+    }
+
+    public static void loadTrain() {
+        trains.clear();
+        File file = new File(TRAINS_FILE);
+
+        if (!file.exists()) {
+            createDefaultTrain();
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                trains.add(Train.fromFileString(line));                    
+            }
+        } catch (IOException e) {
+            System.out.println("Error loading trains: " + e.getMessage());
+        }
+
+        if (trains.isEmpty()) {
+            createDefaultTrain();
+        }
+    }
+
+    private static void createDefaultTrain() {
+        trains.add(new Train("000", 000, "Trash"));
+        saveTrain();
+    }
+    */
 }
