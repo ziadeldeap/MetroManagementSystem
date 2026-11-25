@@ -14,11 +14,17 @@ import java.util.ArrayList;
 import models.*;
 
 public class FileManager {
-    /*
+    
+    
+    
+    /*   
+
     private static final String USERS_FILE = "users.txt";
     private static final String STATIONS_FILE = "stations.txt";
     private static final String LINES_FILE = "lines.txt";
     private static final String TRAINS_FILE = "trains.txt";
+    private static final String SCHEDULE_FILE = "schedule.txt";
+    
 
     public static ArrayList<User> users = new ArrayList<>();
     public static ArrayList<Station> stations = new ArrayList<>();
@@ -26,13 +32,16 @@ public class FileManager {
     public static ArrayList<Train> trains = new ArrayList<>();
     public static ArrayList<TripSchedule> schedules = new ArrayList<>();
     public static ArrayList<Ticket> tickets = new ArrayList<>();
+    public static ArrayList<TripSchedule> schedules = new ArrayList<>();
 
     public static void loadAll() {
         loadUsers();
+        loadSchedule();
     }
 
     public static void saveAll() {
         saveUsers();
+        saveSchedule();
     }
 
     public static void saveUsers() {
@@ -243,5 +252,54 @@ public class FileManager {
         trains.add(new Train("000", 000, "Trash"));
         saveTrain();
     }
-    */
+  
+    
+     //---------------TripSchedule
+   
+    public static void saveSchedule() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(SCHEDULE_FILE))) {
+            for (TripSchedule t : schedules) {
+                writer.write(t.toFileString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving schedules: " + e.getMessage());
+        }
+    }
+
+ public static void loadSchedule() {
+        schedules.clear();
+        File file = new File(SCHEDULE_FILE);
+        if (!file.exists()) {
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) {
+                    continue;
+                }
+                TripSchedule trip = TripSchedule.fromFileString(line);
+                if (trip != null) {
+                    schedules.add(trip);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error loading schedules: " + e.getMessage());
+        }
+    }
+
+    public static boolean hasScheduleConflict(TripSchedule newTrip) {
+        for (TripSchedule existing : schedules) {
+            if (existing.getTripId().equals(newTrip.getTripId())) {
+                continue;
+            }
+            if (newTrip.conflictsWith(existing)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+ */
