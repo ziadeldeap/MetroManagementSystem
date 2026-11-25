@@ -15,7 +15,7 @@ public class LoginFrame implements ActionListener{
     JLabel userIdLabel = new JLabel("ID");
     JLabel userPasswordLabel = new JLabel("Password");
     
-    LoginFrame(){
+    public LoginFrame(){
         
         loginTitle.setBounds(210,25,75,50);
         userIdLabel.setBounds(50,100,75,25);
