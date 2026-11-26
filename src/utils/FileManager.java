@@ -15,16 +15,14 @@ import models.*;
 
 public class FileManager {
     
-    
-    
-    /*   
+   
+       
 
     private static final String USERS_FILE = "users.txt";
     private static final String STATIONS_FILE = "stations.txt";
     private static final String LINES_FILE = "lines.txt";
     private static final String TRAINS_FILE = "trains.txt";
     private static final String SCHEDULE_FILE = "schedule.txt";
-    
 
     public static ArrayList<User> users = new ArrayList<>();
     public static ArrayList<Station> stations = new ArrayList<>();
@@ -32,16 +30,21 @@ public class FileManager {
     public static ArrayList<Train> trains = new ArrayList<>();
     public static ArrayList<TripSchedule> schedules = new ArrayList<>();
     public static ArrayList<Ticket> tickets = new ArrayList<>();
-    public static ArrayList<TripSchedule> schedules = new ArrayList<>();
 
     public static void loadAll() {
         loadUsers();
         loadSchedule();
+        loadStations();
+        loadLines();
+        loadTrain();
     }
 
     public static void saveAll() {
         saveUsers();
         saveSchedule();
+        saveStations();
+        saveLines();
+        saveTrain();
     }
 
     public static void saveUsers() {
@@ -102,7 +105,7 @@ public class FileManager {
 
     public static User authenticate(String username, String password) {
         for (User u : users) {
-            if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
+            if (u.getUserUsername().equals(username) && u.getUserPassword().equals(password)) {
                 return u;
             }
         }
@@ -110,13 +113,6 @@ public class FileManager {
     }
     
     //---------------Station
-    public static void loadAllStations() {
-        loadStations();
-    }
-
-    public static void saveAllStations() {
-        saveStations();
-    }
 
     public static void saveStations() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(STATIONS_FILE))) {
@@ -158,13 +154,6 @@ public class FileManager {
     }
  
     //---------------MetroLine
-    public static void loadAllLines() {
-        loadLines();
-    }
-
-    public static void saveAllLines() {
-        saveLines();
-    }
 
     public static void saveLines() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(LINES_FILE))) {
@@ -206,13 +195,6 @@ public class FileManager {
     }
     
     //---------------train
-    public static void loadAllTrains() {
-        loadTrain();
-    }
-
-    public static void saveAllTrains() {
-        saveTrain();
-    }
 
     public static void saveTrain() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(TRAINS_FILE))) {
@@ -301,5 +283,6 @@ public class FileManager {
         }
         return false;
     }
+
 }
- */
+ 

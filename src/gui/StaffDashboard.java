@@ -2,7 +2,6 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import models.Staff;
 
 public class StaffDashboard {
     
@@ -33,7 +32,7 @@ public class StaffDashboard {
     JButton createScheduleButton = new JButton("Create train schedule");
     JButton updateScheduleButton = new JButton("Update/cancel schedule");
     
-    public StaffDashboard(Staff staff){
+    public StaffDashboard(){
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420,420);
         frame.setLayout(new BorderLayout());

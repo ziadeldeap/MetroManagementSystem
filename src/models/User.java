@@ -10,21 +10,36 @@ package models;
  */
 public class User {
     
-    private String username;
-    private String password;
 
-    public String getPassword() {
-        return password;
+    private String userId;
+    private String userName;
+    private String userUsername; 
+    private String userPassword;
+    private String role;
+    
+    public User(String userId, String userName, String userUsername, String userPassword, String role){
+        this.userId = userId;
+        this.userName = userName;
+        this.userUsername = userUsername;
+        this.userPassword = userPassword;
+        this.role = role;
+    }
+    
+    public String getUserPassword(){
+        return userPassword;
+    }
+    
+    public String getUserRole(){
+        return role;
     }
 
 
-    public String getUsername() {
-        return username;
+    public String getUserUsername() {
+        return userUsername;
     }
 
-    //@Override
     public String toFileString() {
-        return "User{" + "username=" + username + ", password=" + password + '}';
+        return userId+"|"+userName+"|"+userUsername+"|"+userPassword+"|"+role;
     }
     
     
