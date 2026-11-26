@@ -1,14 +1,14 @@
 package metro;
 
-import gui.StaffDashboard;
-import gui.LoginFrame;
-import models.Staff;
+import gui.*;
+import models.*;
+import utils.FileManager;
 
 public class main {
     public static void main(String[] args){
+        FileManager.loadAll();
+        FileManager.saveAll();
         
-        Staff tempstaff = new Staff();
-        LoginFrame login = new LoginFrame ();
-        StaffDashboard temp = new StaffDashboard(tempstaff);
+        LoginFrame login = new LoginFrame();
     }
 }

@@ -3,7 +3,6 @@ package gui;
 import gui.actions.StationActions;
 import gui.actions.profileActions;
 */
-import models.Admin;
 import javax.swing.*;
 import java.awt.*;
 
@@ -51,7 +50,7 @@ public class AdminDashboard extends JPanel{
     JButton ticketReportsButton = new JButton("Tickets report");
     JButton revenueReportsButton = new JButton("Revenue report");
 
-    public AdminDashboard(Admin admin){
+    public AdminDashboard(){
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420,420);
