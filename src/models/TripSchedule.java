@@ -26,7 +26,7 @@ public class TripSchedule {
         this.lineId = lineId;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
-        this.status = status;
+        this.status = Status;
     }
 
 //get Methods
